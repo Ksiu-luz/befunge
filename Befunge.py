@@ -7,7 +7,7 @@ class Befunge:
     def __init__(self, file_name):
         try:
             with open(file_name, 'r') as f:
-                self.text = f.read().split("\n")
+                self.text = f.readlines()
         except FileNotFoundError:
             sys.exit("Файл не найден")
         self.interpreter = Interpreter.Interpreter(self.text)
